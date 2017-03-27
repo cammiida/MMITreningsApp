@@ -15,8 +15,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class WalkingHistoryController implements Initializable{
+public class WalkingHistoryController implements Initializable {
+
     Stage prevStage;
+
+    @FXML
+    private Button homeButton;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -26,4 +30,20 @@ public class WalkingHistoryController implements Initializable{
         this.prevStage = stage;
     }
 
+    @FXML
+    public void home(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        stage.setTitle("Hjem");
+        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
+
+        Parent root = myLoader.load();
+        Scene competitionsScene = new Scene(root);
+
+        MainWindowController mainWindowController = myLoader.getController();
+        mainWindowController.setPrevStage(stage);
+
+        stage.setScene(competitionsScene);
+        prevStage.close();
+        stage.show();
+    }
 }

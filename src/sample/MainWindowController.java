@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -70,7 +71,7 @@ public class MainWindowController implements Initializable {
         //Stage stageTheEventSourceNodeBelongs = (Stage) ((Node)event.getSource()).getScene().getWindow();
 
         Stage stage = new Stage();
-        prevStage.setTitle("Legg til skritt");
+        stage.setTitle("Legg til skritt");
         FXMLLoader myLoader = new FXMLLoader(getClass().getResource("AddWalk.fxml"));
 
         Parent root = myLoader.load();
@@ -105,7 +106,7 @@ public class MainWindowController implements Initializable {
     @FXML
     public void earlierCompetitions(ActionEvent event) throws IOException {
         Stage stage = new Stage();
-        prevStage.setTitle("Tidligere konkurranser");
+        stage.setTitle("Tidligere konkurranser");
         FXMLLoader myLoader = new FXMLLoader(getClass().getResource("EarlierCompetitions.fxml"));
 
         Parent root = myLoader.load();
@@ -127,11 +128,36 @@ public class MainWindowController implements Initializable {
 
     @FXML
     public void competitions(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        stage.setTitle("Konkurranser");
+        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("Competitions.fxml"));
 
+        Parent root = myLoader.load();
+        Scene competitionsScene = new Scene(root);
+
+        CompetitionsController competitionsController = myLoader.getController();
+        competitionsController.setPrevStage(stage);
+
+        stage.setScene(competitionsScene);
+        prevStage.close();
+        stage.show();
     }
 
     @FXML
     public void settings(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        stage.setTitle("Innstillinger");
+        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("Settings.fxml"));
+
+        Parent root = myLoader.load();
+        Scene settingsScene = new Scene(root);
+
+        SettingsController settingsController = myLoader.getController();
+        settingsController.setPrevStage(stage);
+
+        stage.setScene(settingsScene);
+        prevStage.close();
+        stage.show();
 
     }
 }
