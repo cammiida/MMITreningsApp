@@ -9,7 +9,6 @@ import javafx.scene.control.Button;
 import javafx.fxml.FXML;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -40,7 +39,7 @@ For å bytte scene:
 
 
 
-public class MainWindowController implements Initializable{
+public class MainWindowController implements Initializable {
 
     Stage prevStage;
 
@@ -61,8 +60,13 @@ public class MainWindowController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
     }
 
+    public void setPrevStage(Stage stage) {
+        this.prevStage = stage;
+    }
+
+
     @FXML
-    public void addWalk (ActionEvent event) throws IOException {
+    public void addWalk(ActionEvent event) throws IOException {
         //Stage stageTheEventSourceNodeBelongs = (Stage) ((Node)event.getSource()).getScene().getWindow();
 
         Stage stage = new Stage();
@@ -81,7 +85,7 @@ public class MainWindowController implements Initializable{
     }
 
     @FXML
-    public void walkingHistory (ActionEvent event) throws IOException{
+    public void walkingHistory(ActionEvent event) throws IOException {
 
         Stage stage = new Stage();
         prevStage.setTitle("Treningshistorikk");
@@ -98,8 +102,36 @@ public class MainWindowController implements Initializable{
         stage.show();
     }
 
+    @FXML
+    public void earlierCompetitions(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        prevStage.setTitle("Tidligere konkurranser");
+        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("EarlierCompetitions.fxml"));
 
-    public void setPrevStage(Stage stage) {
-        this.prevStage = stage;
+        Parent root = myLoader.load();
+        Scene earlierCompetitionsScene = new Scene(root);
+
+        EarlierCompetitionsController earlierCompetitionsController = myLoader.getController();
+        earlierCompetitionsController.setPrevStage(stage);
+
+        stage.setScene(earlierCompetitionsScene);
+        prevStage.close();
+        stage.show();
+
+    }
+
+    @FXML
+    public void home(ActionEvent event) throws IOException {
+
+    }
+
+    @FXML
+    public void competitions(ActionEvent event) throws IOException {
+
+    }
+
+    @FXML
+    public void settings(ActionEvent event) throws IOException {
+
     }
 }

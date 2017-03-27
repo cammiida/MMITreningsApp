@@ -117,14 +117,14 @@
                <children>
                   <Button fx:id="addWalk" mnemonicParsing="false" onAction="#addWalk" prefHeight="161.0" prefWidth="150.0" text="Legg til skritt" />
                   <Button fx:id="walkingHistory" mnemonicParsing="false" onAction="#walkingHistory" prefHeight="168.0" prefWidth="150.0" text="Treningshistorikk" />
-                  <Button fx:id="earlierCompetitions" mnemonicParsing="false" prefHeight="171.0" prefWidth="150.0" text="Tidligere konkurranser" />
+                  <Button fx:id="earlierCompetitions" mnemonicParsing="false" onAction="#earlierCompetitions" prefHeight="171.0" prefWidth="150.0" text="Tidligere konkurranser" />
                </children>
             </HBox>
             <HBox prefHeight="120.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="home" mnemonicParsing="false" prefHeight="120.0" prefWidth="150.0" text="HJEM" />
-                  <Button fx:id="competitions" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="120.0" prefWidth="150.0" text="KONKURRANSER" />
-                  <Button fx:id="settings" mnemonicParsing="false" prefHeight="120.0" prefWidth="150.0" text="INNSTILLINGER" />
+                  <Button fx:id="home" mnemonicParsing="false" onAction="#home" prefHeight="120.0" prefWidth="150.0" text="HJEM" />
+                  <Button fx:id="competitions" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#competitions" prefHeight="120.0" prefWidth="150.0" text="KONKURRANSER" />
+                  <Button fx:id="settings" mnemonicParsing="false" onAction="#settings" prefHeight="120.0" prefWidth="150.0" text="INNSTILLINGER" />
                </children>
             </HBox>
          </children>
