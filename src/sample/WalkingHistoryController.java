@@ -46,4 +46,40 @@ public class WalkingHistoryController implements Initializable {
         prevStage.close();
         stage.show();
     }
+
+    @FXML
+    public void competitions(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        stage.setTitle("Konkurranser");
+        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("Competitions.fxml"));
+
+        Parent root = myLoader.load();
+        Scene competitionsScene = new Scene(root);
+
+        CompetitionsController competitionsController = myLoader.getController();
+        competitionsController.setPrevStage(stage);
+
+        stage.setScene(competitionsScene);
+        prevStage.close();
+        stage.show();
+    }
+
+    @FXML
+    public void settings(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        stage.setTitle("Innstillinger");
+        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("Settings.fxml"));
+
+        Parent root = myLoader.load();
+        Scene settingsScene = new Scene(root);
+
+        SettingsController settingsController = myLoader.getController();
+        settingsController.setPrevStage(stage);
+
+        stage.setScene(settingsScene);
+        prevStage.close();
+        stage.show();
+
+    }
+
 }
