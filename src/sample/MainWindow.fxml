@@ -27,7 +27,7 @@
                <children>
                   <ImageView fitHeight="90.0" fitWidth="137.0" layoutX="179.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../Star.png" />
+                        <Image url="@Star.png" />
                      </image>
                   </ImageView>
                </children>
@@ -86,18 +86,18 @@
                         <Insets bottom="60.0" right="272.0" />
                      </StackPane.margin>
                      <image>
-                        <Image url="@../../Star.png" />
+                        <Image url="@Star.png" />
                      </image>
                   </ImageView>
                   <Line endX="100.0" startX="-350.0" />
                   <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="90.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../Star.png" />
+                        <Image url="@Star.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="226.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../Star.png" />
+                        <Image url="@Star.png" />
                      </image>
                      <StackPane.margin>
                         <Insets bottom="24.0" right="136.0" />
@@ -105,7 +105,7 @@
                   </ImageView>
                   <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="226.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../Star.png" />
+                        <Image url="@Star.png" />
                      </image>
                      <StackPane.margin>
                         <Insets left="410.0" />
