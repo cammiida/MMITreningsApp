@@ -32,14 +32,14 @@ public class Main extends Application{
         mainWindowController.setPrevStage(primaryStage);
 
 
-        Label label2 = new Label("Welcome to the second scene");
+        /*Label label2 = new Label("Welcome to the second scene");
         Button button2 = new Button("Go back to scene 1");
         button2.setOnAction(e -> stage.setScene(mainMenu));
         VBox layout2 = new VBox(20);
         layout2.getChildren().addAll(label2, button2);
-        scene2 = new Scene(layout2, 200, 200);
+        scene2 = new Scene(layout2, 200, 200);*/
 
-        stage.setScene(scene2);
+        stage.setScene(mainMenu);
         stage.setTitle("Title here");
         stage.show();
 
