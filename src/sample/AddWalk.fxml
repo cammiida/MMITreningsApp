@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddWalkController">
    <children>
-      <Label alignment="CENTER" layoutX="52.0" layoutY="94.0" prefHeight="138.0" prefWidth="346.0" text="LEGG TIL SKRITT" />
       <VBox layoutX="119.0" prefHeight="600.0" prefWidth="450.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <HBox prefHeight="50.0" prefWidth="200.0">
@@ -16,7 +21,77 @@
                   <Button fx:id="homeButton" mnemonicParsing="false" onAction="#home" prefHeight="50.0" prefWidth="100.0" text="&lt;-- Tilbake" />
                </children>
             </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="100.0" prefWidth="300.0" text="LEGG TIL SKRITT">
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@footprint.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets top="15.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+            <Label prefHeight="40.0" prefWidth="450.0" text="Hvor mange skritt vil du legge til?">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="40.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="steps"  prefHeight="40.0" prefWidth="170.0">
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Label prefHeight="40.0" prefWidth="200.0" text="skritt">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <Label prefHeight="40.0" prefWidth="450.0" text="Hvilken dag?">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="date" onAction="#setDate" prefHeight="100.0" prefWidth="170.0">
+               <VBox.margin>
+                  <Insets left="40.0" />
+               </VBox.margin>
+            </DatePicker>
+            <Button fx:id="addWalk" mnemonicParsing="false" onAction="#addWalk" prefWidth="170.0" text="Legg til skritt">
+               <VBox.margin>
+                  <Insets left="40.0" top="40.0" />
+               </VBox.margin>
+            </Button>
          </children>
       </VBox>
+      <HBox layoutX="10.0" layoutY="10.0" prefHeight="120.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Button fx:id="home" mnemonicParsing="false" onAction="#home" prefHeight="120.0" prefWidth="150.0" text="HJEM" />
+            <Button fx:id="competitions" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#competitions" prefHeight="120.0" prefWidth="150.0" text="KONKURRANSER" />
+            <Button fx:id="settings" mnemonicParsing="false" onAction="#settings" prefHeight="120.0" prefWidth="150.0" text="INNSTILLINGER" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>
