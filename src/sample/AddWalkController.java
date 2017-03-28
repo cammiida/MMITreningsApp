@@ -1,15 +1,12 @@
 package sample;
 
-import com.sun.xml.internal.ws.api.FeatureConstructor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.fxml.FXML;
-import javafx.scene.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -55,12 +52,12 @@ public class AddWalkController implements Initializable{
     public void competitions(ActionEvent event) throws IOException {
         Stage stage = new Stage();
         stage.setTitle("Konkurranser");
-        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("Competitions.fxml"));
+        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("NoActiveCompetitions.fxml"));
 
         Parent root = myLoader.load();
         Scene competitionsScene = new Scene(root);
 
-        CompetitionsController competitionsController = myLoader.getController();
+        NoActiveCompetitionsController competitionsController = myLoader.getController();
         competitionsController.setPrevStage(stage);
 
         stage.setScene(competitionsScene);

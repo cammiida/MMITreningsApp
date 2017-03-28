@@ -13,9 +13,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class EarlierCompetitionsController implements Initializable {
-
-
+public class ActiveCompetitionController implements Initializable{
     Stage prevStage;
 
     @FXML
@@ -80,4 +78,5 @@ public class EarlierCompetitionsController implements Initializable {
         stage.show();
 
     }
+
 }

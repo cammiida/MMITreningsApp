@@ -7,7 +7,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -43,6 +42,7 @@ For å bytte scene:
 public class MainWindowController implements Initializable {
 
     Stage prevStage;
+    private Boolean activeCompetition = false;
 
     @FXML
     private Button addWalk;
@@ -129,16 +129,29 @@ public class MainWindowController implements Initializable {
     @FXML
     public void competitions(ActionEvent event) throws IOException {
         Stage stage = new Stage();
-        stage.setTitle("Konkurranser");
-        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("Competitions.fxml"));
 
-        Parent root = myLoader.load();
-        Scene competitionsScene = new Scene(root);
+        if (this.activeCompetition == false) {
 
-        CompetitionsController competitionsController = myLoader.getController();
-        competitionsController.setPrevStage(stage);
+            stage.setTitle("Ingen aktive konkurranser");
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("NoActiveCompetitions.fxml"));
 
-        stage.setScene(competitionsScene);
+            Parent root = myLoader.load();
+            Scene competitionsScene = new Scene(root);
+            NoActiveCompetitionsController competitionsController = myLoader.getController();
+            competitionsController.setPrevStage(stage);
+            stage.setScene(competitionsScene);
+
+        }else if (this.activeCompetition == true){
+            stage.setTitle("Aktiv konkurranse");
+            FXMLLoader myloader = new FXMLLoader(getClass().getResource("ActiveCompetition.fxml"));
+
+            Parent root = myloader.load();
+            Scene competitionsScene = new Scene(root);
+            ActiveCompetitionController activeCompetitionController = myloader.getController();
+            activeCompetitionController.setPrevStage(stage);
+            stage.setScene(competitionsScene);
+        }
+
         prevStage.close();
         stage.show();
     }
@@ -160,4 +173,10 @@ public class MainWindowController implements Initializable {
         stage.show();
 
     }
+
+    public void setActiveCompetition (Boolean activity){
+        activeCompetition = activity;
+    }
+
+
 }

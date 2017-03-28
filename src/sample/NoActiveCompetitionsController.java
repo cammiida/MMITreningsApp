@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CompetitionsController implements Initializable{
+public class NoActiveCompetitionsController implements Initializable{
 
     Stage prevStage;
 

@@ -14,7 +14,6 @@ public class Main extends Application{
     Scene mainMenu, scene2;
 
 
-
     public static void main(String[] args) {
         launch(args);
     }
