@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class NoActiveCompetitionsController implements Initializable{
+public class RankingController implements Initializable{
 
     Stage prevStage;
 
@@ -46,6 +46,23 @@ public class NoActiveCompetitionsController implements Initializable{
     }
 
     @FXML
+    public void competitions(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        stage.setTitle("Konkurranser");
+        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("NoActiveCompetitions.fxml"));
+
+        Parent root = myLoader.load();
+        Scene competitionsScene = new Scene(root);
+
+        NoActiveCompetitionsController competitionsController = myLoader.getController();
+        competitionsController.setPrevStage(stage);
+
+        stage.setScene(competitionsScene);
+        prevStage.close();
+        stage.show();
+    }
+
+    @FXML
     public void settings(ActionEvent event) throws IOException {
         Stage stage = new Stage();
         stage.setTitle("Innstillinger");
@@ -61,23 +78,6 @@ public class NoActiveCompetitionsController implements Initializable{
         prevStage.close();
         stage.show();
 
-    }
-
-    @FXML
-    public void signUp(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        stage.setTitle("Aktive konkurranser");
-        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("ActiveCompetitions.fxml"));
-
-        Parent root = myLoader.load();
-        Scene activeCompetitionsScene = new Scene(root);
-
-        ActiveCompetitionsController activeCompetitionsController = myLoader.getController();
-        activeCompetitionsController.setPrevStage(stage);
-
-        stage.setScene(activeCompetitionsScene);
-        prevStage.close();
-        stage.show();
     }
 
 }

@@ -1,9 +1,9 @@
 package sample;
 
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -13,14 +13,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class NoActiveCompetitionsController implements Initializable{
-
+public class RelevantCompetitionController {
     Stage prevStage;
 
     @FXML
     private Button homeButton;
 
-    @Override
     public void initialize(URL location, ResourceBundle resources) {
     }
 
@@ -35,10 +33,27 @@ public class NoActiveCompetitionsController implements Initializable{
         FXMLLoader myLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
 
         Parent root = myLoader.load();
-        Scene competitionsScene = new Scene(root);
+        Scene homeScene = new Scene(root);
 
         MainWindowController mainWindowController = myLoader.getController();
         mainWindowController.setPrevStage(stage);
+
+        stage.setScene(homeScene);
+        prevStage.close();
+        stage.show();
+    }
+
+    @FXML
+    public void competitions(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        stage.setTitle("Konkurranser");
+        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("NoActiveCompetitions.fxml"));
+
+        Parent root = myLoader.load();
+        Scene competitionsScene = new Scene(root);
+
+        NoActiveCompetitionsController competitionsController = myLoader.getController();
+        competitionsController.setPrevStage(stage);
 
         stage.setScene(competitionsScene);
         prevStage.close();
@@ -64,20 +79,22 @@ public class NoActiveCompetitionsController implements Initializable{
     }
 
     @FXML
-    public void signUp(ActionEvent event) throws IOException {
+    public void activateCompetition(ActionEvent event) throws IOException {
         Stage stage = new Stage();
-        stage.setTitle("Aktive konkurranser");
-        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("ActiveCompetitions.fxml"));
+        stage.setTitle("Aktiv konkurranse");
+        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("Competition.fxml"));
 
         Parent root = myLoader.load();
-        Scene activeCompetitionsScene = new Scene(root);
+        Scene competitionScene = new Scene(root);
 
-        ActiveCompetitionsController activeCompetitionsController = myLoader.getController();
-        activeCompetitionsController.setPrevStage(stage);
+        CompetitionController competitionController = myLoader.getController();
+        competitionController.setPrevStage(stage);
 
-        stage.setScene(activeCompetitionsScene);
+        stage.setScene(competitionScene);
         prevStage.close();
         stage.show();
+
+
     }
 
 }

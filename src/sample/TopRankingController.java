@@ -13,7 +13,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ActiveCompetitionController implements Initializable{
+public class TopRankingController implements Initializable{
+
     Stage prevStage;
 
     @FXML

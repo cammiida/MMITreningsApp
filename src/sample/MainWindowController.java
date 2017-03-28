@@ -143,11 +143,11 @@ public class MainWindowController implements Initializable {
 
         }else if (this.activeCompetition == true){
             stage.setTitle("Aktiv konkurranse");
-            FXMLLoader myloader = new FXMLLoader(getClass().getResource("ActiveCompetition.fxml"));
+            FXMLLoader myloader = new FXMLLoader(getClass().getResource("ActiveCompetitions.fxml"));
 
             Parent root = myloader.load();
             Scene competitionsScene = new Scene(root);
-            ActiveCompetitionController activeCompetitionController = myloader.getController();
+            ActiveCompetitionsController activeCompetitionController = myloader.getController();
             activeCompetitionController.setPrevStage(stage);
             stage.setScene(competitionsScene);
         }
