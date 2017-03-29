@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddWalkController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddWalkController">
    <children>
       <VBox layoutX="119.0" prefHeight="600.0" prefWidth="450.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -51,7 +51,7 @@
             </Label>
             <HBox prefHeight="40.0" prefWidth="200.0">
                <children>
-                  <TextField fx:id="steps"  prefHeight="40.0" prefWidth="170.0">
+                  <TextField fx:id="steps" prefHeight="40.0" prefWidth="170.0">
                      <HBox.margin>
                         <Insets left="40.0" />
                      </HBox.margin>
@@ -86,12 +86,5 @@
             </Button>
          </children>
       </VBox>
-      <HBox layoutX="10.0" layoutY="10.0" prefHeight="120.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-         <children>
-            <Button fx:id="home" mnemonicParsing="false" onAction="#home" prefHeight="120.0" prefWidth="150.0" text="HJEM" />
-            <Button fx:id="competitions" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#competitions" prefHeight="120.0" prefWidth="150.0" text="KONKURRANSER" />
-            <Button fx:id="settings" mnemonicParsing="false" onAction="#settings" prefHeight="120.0" prefWidth="150.0" text="INNSTILLINGER" />
-         </children>
-      </HBox>
    </children>
 </AnchorPane>
