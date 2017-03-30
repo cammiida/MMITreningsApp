@@ -80,4 +80,21 @@ public class TopRankingController implements Initializable{
 
     }
 
+    @FXML
+    public void back(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        stage.setTitle("Rangering");
+        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("Ranking.fxml"));
+
+        Parent root = myLoader.load();
+        Scene rankingScene = new Scene(root);
+
+        RankingController rankingController = myLoader.getController();
+        rankingController.setPrevStage(stage);
+
+        stage.setScene(rankingScene);
+        prevStage.close();
+        stage.show();
+    }
+
 }

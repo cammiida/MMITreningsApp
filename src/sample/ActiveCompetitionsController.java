@@ -16,6 +16,7 @@ import java.util.ResourceBundle;
 
 public class ActiveCompetitionsController implements Initializable{
     Stage prevStage;
+    private boolean activeCompetition = false;
 
     @FXML
     private Button homeButton;
@@ -95,6 +96,14 @@ public class ActiveCompetitionsController implements Initializable{
         stage.setScene(relevantCompetitionScene);
         prevStage.close();
         stage.show();
+    }
+
+    public boolean getActiveCompetition (){
+        return this.activeCompetition;
+    }
+
+    public void setActiveCompetition(boolean activeness){
+        this.activeCompetition = activeness;
     }
 
 }

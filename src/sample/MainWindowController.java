@@ -174,9 +174,12 @@ public class MainWindowController implements Initializable {
 
     }
 
-    public void setActiveCompetition (Boolean activity){
-        activeCompetition = activity;
+    public boolean getActiveCompetition (){
+        return this.activeCompetition;
     }
 
+    public void setActiveCompetition(boolean activeness){
+        this.activeCompetition = activeness;
+    }
 
 }

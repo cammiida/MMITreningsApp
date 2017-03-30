@@ -16,6 +16,8 @@ import java.util.ResourceBundle;
 public class RelevantCompetitionController {
     Stage prevStage;
 
+    private boolean activeCompetition;
+
     @FXML
     private Button homeButton;
 
@@ -93,8 +95,25 @@ public class RelevantCompetitionController {
         stage.setScene(competitionScene);
         prevStage.close();
         stage.show();
-
-
     }
+
+    @FXML
+    public void back(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        stage.setTitle("Aktive konkurranser");
+        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("ActiveCompetitions.fxml"));
+
+        Parent root = myLoader.load();
+        Scene activeCompetitionsScene = new Scene(root);
+
+        ActiveCompetitionsController activeCompetitionsController = myLoader.getController();
+        activeCompetitionsController.setPrevStage(stage);
+
+        stage.setScene(activeCompetitionsScene);
+        prevStage.close();
+        stage.show();
+    }
+
+
 
 }

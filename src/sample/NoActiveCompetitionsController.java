@@ -17,6 +17,8 @@ public class NoActiveCompetitionsController implements Initializable{
 
     Stage prevStage;
 
+    private boolean activeCompetition = false;
+
     @FXML
     private Button homeButton;
 
@@ -78,6 +80,14 @@ public class NoActiveCompetitionsController implements Initializable{
         stage.setScene(activeCompetitionsScene);
         prevStage.close();
         stage.show();
+    }
+
+    public boolean getActiveCompetition (){
+        return this.activeCompetition;
+    }
+
+    public void setActiveCompetition(boolean activeness){
+        this.activeCompetition = activeness;
     }
 
 }

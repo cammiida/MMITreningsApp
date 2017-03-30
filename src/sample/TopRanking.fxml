@@ -2,11 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -18,9 +14,73 @@
          <children>
             <HBox prefHeight="50.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="homeButton" mnemonicParsing="false" onAction="#home" prefHeight="50.0" prefWidth="100.0" text="&lt;-- Tilbake" />
+                  <Button fx:id="backButton" mnemonicParsing="false" onAction="#back" prefHeight="50.0" prefWidth="100.0" text="&lt;-- Tilbake" />
+                  <Label prefHeight="50.0" prefWidth="350.0" style="-fx-background-color: grey;" text="TABELL">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="120.0" />
+                     </padding>
+                  </Label>
                </children>
             </HBox>
+            <Label prefHeight="50.0" prefWidth="450.0" style="-fx-border-color: grey;" text="TOPPLISTE">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label prefHeight="40.0" prefWidth="450.0" style="-fx-border-color: grey;" text="1. Fred">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </Label>
+            <Label prefHeight="40.0" prefWidth="450.0" style="-fx-border-color: grey;" text="2. Lauritz">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </Label>
+            <Label prefHeight="40.0" prefWidth="450.0" style="-fx-border-color: grey;" text="3. Solbjørg">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </Label>
+            <Label prefHeight="40.0" prefWidth="450.0" style="-fx-border-color: grey;" text="4. Karoline">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </Label>
+            <Label prefHeight="40.0" prefWidth="450.0" style="-fx-border-color: grey;" text="5. Anonym">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </Label>
+            <Label prefHeight="40.0" prefWidth="450.0" style="-fx-border-color: grey;" text="6. Anonym">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </Label>
+            <Label prefHeight="40.0" prefWidth="450.0" style="-fx-border-color: grey;" text="7. Ingrid">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </Label>
+            <Label prefHeight="40.0" prefWidth="450.0" style="-fx-border-color: grey;" text="8. Tiril">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </Label>
+            <Label prefHeight="40.0" prefWidth="450.0" style="-fx-border-color: grey;" text="9. Camilla">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </Label>
 
          </children>
       </VBox>

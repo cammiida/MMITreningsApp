@@ -129,6 +129,5 @@
             <Button mnemonicParsing="false" prefHeight="120.0" prefWidth="150.0" text="INNSTILLINGER" />
          </children>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

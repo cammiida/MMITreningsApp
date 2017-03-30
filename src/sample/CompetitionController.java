@@ -18,6 +18,7 @@ import java.util.ResourceBundle;
 public class CompetitionController implements Initializable{
 
     Stage prevStage;
+    private boolean activeCompetition;
 
     @FXML
     private ComboBox comboBox;
@@ -47,6 +48,8 @@ public class CompetitionController implements Initializable{
 
         MainWindowController mainWindowController = myLoader.getController();
         mainWindowController.setPrevStage(stage);
+
+        mainWindowController.setActiveCompetition(this.activeCompetition);
 
         stage.setScene(competitionsScene);
         prevStage.close();
@@ -101,6 +104,23 @@ public class CompetitionController implements Initializable{
         rankingController.setPrevStage(stage);
 
         stage.setScene(rankingScene);
+        prevStage.close();
+        stage.show();
+    }
+
+    @FXML
+    public void back(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        stage.setTitle("Aktuell konkurranse");
+        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("RelevantCompetition.fxml"));
+
+        Parent root = myLoader.load();
+        Scene relevantCompetitionScene = new Scene(root);
+
+        RelevantCompetitionController relevantCompetitionController = myLoader.getController();
+        relevantCompetitionController.setPrevStage(stage);
+
+        stage.setScene(relevantCompetitionScene);
         prevStage.close();
         stage.show();
     }
