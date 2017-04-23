@@ -42,6 +42,10 @@ public class NoActiveCompetitionsController implements Initializable{
         MainWindowController mainWindowController = myLoader.getController();
         mainWindowController.setPrevStage(stage);
 
+        if (this.activeCompetition == true){
+            mainWindowController.setActiveCompetition();
+        }
+
         stage.setScene(competitionsScene);
         prevStage.close();
         stage.show();
@@ -58,6 +62,10 @@ public class NoActiveCompetitionsController implements Initializable{
 
         SettingsController settingsController = myLoader.getController();
         settingsController.setPrevStage(stage);
+
+        if (this.activeCompetition == true){
+            settingsController.setActiveCompetition();
+        }
 
         stage.setScene(settingsScene);
         prevStage.close();
@@ -77,6 +85,10 @@ public class NoActiveCompetitionsController implements Initializable{
         ActiveCompetitionsController activeCompetitionsController = myLoader.getController();
         activeCompetitionsController.setPrevStage(stage);
 
+        if (this.activeCompetition == true){
+            activeCompetitionsController.setActiveCompetition();
+        }
+
         stage.setScene(activeCompetitionsScene);
         prevStage.close();
         stage.show();
@@ -86,8 +98,8 @@ public class NoActiveCompetitionsController implements Initializable{
         return this.activeCompetition;
     }
 
-    public void setActiveCompetition(boolean activeness){
-        this.activeCompetition = activeness;
+    public void setActiveCompetition(){
+        this.activeCompetition = true;
     }
 
 }

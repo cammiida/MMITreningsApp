@@ -31,6 +31,7 @@ public class ActiveCompetitionsController implements Initializable{
 
     @FXML
     public void home(ActionEvent event) throws IOException {
+
         Stage stage = new Stage();
         stage.setTitle("Hjem");
         FXMLLoader myLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
@@ -41,6 +42,10 @@ public class ActiveCompetitionsController implements Initializable{
         MainWindowController mainWindowController = myLoader.getController();
         mainWindowController.setPrevStage(stage);
 
+        if (this.activeCompetition == true){
+            mainWindowController.setActiveCompetition();
+        }
+
         stage.setScene(competitionsScene);
         prevStage.close();
         stage.show();
@@ -48,19 +53,6 @@ public class ActiveCompetitionsController implements Initializable{
 
     @FXML
     public void competitions(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        stage.setTitle("Konkurranser");
-        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("NoActiveCompetitions.fxml"));
-
-        Parent root = myLoader.load();
-        Scene competitionsScene = new Scene(root);
-
-        NoActiveCompetitionsController competitionsController = myLoader.getController();
-        competitionsController.setPrevStage(stage);
-
-        stage.setScene(competitionsScene);
-        prevStage.close();
-        stage.show();
     }
 
     @FXML
@@ -74,6 +66,10 @@ public class ActiveCompetitionsController implements Initializable{
 
         SettingsController settingsController = myLoader.getController();
         settingsController.setPrevStage(stage);
+
+        if (this.activeCompetition == true){
+            settingsController.setActiveCompetition();
+        }
 
         stage.setScene(settingsScene);
         prevStage.close();
@@ -93,6 +89,10 @@ public class ActiveCompetitionsController implements Initializable{
         RelevantCompetitionController relevantCompetitionController = myLoader.getController();
         relevantCompetitionController.setPrevStage(stage);
 
+        if (this.activeCompetition == true){
+            relevantCompetitionController.setActiveCompetition();
+        }
+
         stage.setScene(relevantCompetitionScene);
         prevStage.close();
         stage.show();
@@ -102,8 +102,8 @@ public class ActiveCompetitionsController implements Initializable{
         return this.activeCompetition;
     }
 
-    public void setActiveCompetition(boolean activeness){
-        this.activeCompetition = activeness;
+    public void setActiveCompetition(){
+        this.activeCompetition = true;
     }
 
 }

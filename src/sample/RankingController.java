@@ -17,6 +17,7 @@ import java.util.ResourceBundle;
 public class RankingController implements Initializable{
 
     Stage prevStage;
+    private boolean activeCompetition;
 
     @FXML
     private Button topRankingButton;
@@ -44,6 +45,10 @@ public class RankingController implements Initializable{
         TopRankingController topRankingController = myLoader.getController();
         topRankingController.setPrevStage(stage);
 
+        if (this.activeCompetition == true){
+            topRankingController.setActiveCompetition();
+        }
+
         stage.setScene(topRankingScene);
         prevStage.close();
         stage.show();
@@ -61,6 +66,10 @@ public class RankingController implements Initializable{
         MainWindowController mainWindowController = myLoader.getController();
         mainWindowController.setPrevStage(stage);
 
+        if (this.activeCompetition == true){
+            mainWindowController.setActiveCompetition();
+        }
+
         stage.setScene(competitionsScene);
         prevStage.close();
         stage.show();
@@ -68,19 +77,6 @@ public class RankingController implements Initializable{
 
     @FXML
     public void competitions(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        stage.setTitle("Konkurranser");
-        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("NoActiveCompetitions.fxml"));
-
-        Parent root = myLoader.load();
-        Scene competitionsScene = new Scene(root);
-
-        NoActiveCompetitionsController competitionsController = myLoader.getController();
-        competitionsController.setPrevStage(stage);
-
-        stage.setScene(competitionsScene);
-        prevStage.close();
-        stage.show();
     }
 
     @FXML
@@ -94,6 +90,10 @@ public class RankingController implements Initializable{
 
         SettingsController settingsController = myLoader.getController();
         settingsController.setPrevStage(stage);
+
+        if (this.activeCompetition == true){
+            settingsController.setActiveCompetition();
+        }
 
         stage.setScene(settingsScene);
         prevStage.close();
@@ -113,12 +113,22 @@ public class RankingController implements Initializable{
         CompetitionController competitionController = myLoader.getController();
         competitionController.setPrevStage(stage);
 
+        if (this.activeCompetition == true){
+            competitionController.setActiveCompetition();
+        }
+
         stage.setScene(competitionScene);
         prevStage.close();
         stage.show();
 
     }
 
+    public boolean getActiveCompetition (){
+        return this.activeCompetition;
+    }
 
+    public void setActiveCompetition(){
+        this.activeCompetition = true;
+    }
 
 }

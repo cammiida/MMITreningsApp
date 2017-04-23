@@ -16,6 +16,7 @@ import java.util.ResourceBundle;
 public class WalkingHistoryController implements Initializable {
 
     Stage prevStage;
+    private boolean activeCompetition;
 
     @FXML
     private Button homeButton;
@@ -40,6 +41,10 @@ public class WalkingHistoryController implements Initializable {
         MainWindowController mainWindowController = myLoader.getController();
         mainWindowController.setPrevStage(stage);
 
+        if (this.activeCompetition == true){
+            mainWindowController.setActiveCompetition();
+        }
+
         stage.setScene(competitionsScene);
         prevStage.close();
         stage.show();
@@ -48,16 +53,33 @@ public class WalkingHistoryController implements Initializable {
     @FXML
     public void competitions(ActionEvent event) throws IOException {
         Stage stage = new Stage();
-        stage.setTitle("Konkurranser");
-        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("NoActiveCompetitions.fxml"));
 
-        Parent root = myLoader.load();
-        Scene competitionsScene = new Scene(root);
+        if (this.activeCompetition == false) {
 
-        NoActiveCompetitionsController competitionsController = myLoader.getController();
-        competitionsController.setPrevStage(stage);
+            stage.setTitle("Ingen aktive konkurranser");
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("NoActiveCompetitions.fxml"));
 
-        stage.setScene(competitionsScene);
+            Parent root = myLoader.load();
+            Scene competitionsScene = new Scene(root);
+            NoActiveCompetitionsController competitionsController = myLoader.getController();
+            competitionsController.setPrevStage(stage);
+
+            stage.setScene(competitionsScene);
+
+        }else if (this.activeCompetition == true){
+            stage.setTitle("Aktiv konkurranse");
+            FXMLLoader myloader = new FXMLLoader(getClass().getResource("Competition.fxml"));
+
+            Parent root = myloader.load();
+            Scene competitionsScene = new Scene(root);
+            CompetitionController competitionController = myloader.getController();
+            competitionController.setPrevStage(stage);
+
+            competitionController.setActiveCompetition();
+
+            stage.setScene(competitionsScene);
+        }
+
         prevStage.close();
         stage.show();
     }
@@ -74,10 +96,22 @@ public class WalkingHistoryController implements Initializable {
         SettingsController settingsController = myLoader.getController();
         settingsController.setPrevStage(stage);
 
+        if (this.activeCompetition == true){
+            settingsController.setActiveCompetition();
+        }
+
         stage.setScene(settingsScene);
         prevStage.close();
         stage.show();
 
+    }
+
+    public boolean getActiveCompetition (){
+        return this.activeCompetition;
+    }
+
+    public void setActiveCompetition(){
+        this.activeCompetition = true;
     }
 
 }

@@ -16,6 +16,7 @@ import java.util.ResourceBundle;
 public class TopRankingController implements Initializable{
 
     Stage prevStage;
+    private boolean activeCompetition;
 
     @FXML
     private Button homeButton;
@@ -40,6 +41,10 @@ public class TopRankingController implements Initializable{
         MainWindowController mainWindowController = myLoader.getController();
         mainWindowController.setPrevStage(stage);
 
+        if (this.activeCompetition == true){
+            mainWindowController.setActiveCompetition();
+        }
+
         stage.setScene(competitionsScene);
         prevStage.close();
         stage.show();
@@ -47,19 +52,6 @@ public class TopRankingController implements Initializable{
 
     @FXML
     public void competitions(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        stage.setTitle("Konkurranser");
-        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("NoActiveCompetitions.fxml"));
-
-        Parent root = myLoader.load();
-        Scene competitionsScene = new Scene(root);
-
-        NoActiveCompetitionsController competitionsController = myLoader.getController();
-        competitionsController.setPrevStage(stage);
-
-        stage.setScene(competitionsScene);
-        prevStage.close();
-        stage.show();
     }
 
     @FXML
@@ -73,6 +65,10 @@ public class TopRankingController implements Initializable{
 
         SettingsController settingsController = myLoader.getController();
         settingsController.setPrevStage(stage);
+
+        if (this.activeCompetition == true){
+            settingsController.setActiveCompetition();
+        }
 
         stage.setScene(settingsScene);
         prevStage.close();
@@ -92,9 +88,21 @@ public class TopRankingController implements Initializable{
         RankingController rankingController = myLoader.getController();
         rankingController.setPrevStage(stage);
 
+        if (this.activeCompetition == true){
+            rankingController.setActiveCompetition();
+        }
+
         stage.setScene(rankingScene);
         prevStage.close();
         stage.show();
+    }
+
+    public boolean getActiveCompetition (){
+        return this.activeCompetition;
+    }
+
+    public void setActiveCompetition(){
+        this.activeCompetition = true;
     }
 
 }
